@@ -15,3 +15,11 @@ However, it important to note here that Class Declarations are NOT HOISTED.
 We have both the instance method and static method.
 
 The static method are useful at creating utility functions. Just like we have Math utility functions that are not tied to a particular object.
+
+# This Keyword in ES6 classes
+
+The This keyword is automatic set to strict mode by the JS engine. This way we don't accidentally change the window object. This is another benefit of using the ES6 class. It help with make implimentation using This predictable. 
+
+# Private Properties Using Symbols
+
+In this lecture, we learned how to use Symbols to impliment Private Properties in Es6
