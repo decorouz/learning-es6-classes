@@ -22,17 +22,38 @@
 
 // Implementing Privte Properties Using Symbols
 
-const _radius = Symbol();
-const _draw = Symbol();
+// const _radius = Symbol();
+// const _draw = Symbol();
 
-class Circle {
+// class Circle {
+//   constructor(radius) {
+//     this[_radius] = radius;
+//   }
+
+//   [_draw]() {}
+// }
+// const c = new Circle(1);
+
+// const key = Object.getOwnPropertySymbols(c)[0];
+// console.log(c[key]);
+
+// Using Getter and Setter Methods
+
+const _radius = new WeakMap();
+
+class Cirle {
   constructor(radius) {
-    this[_radius] = radius;
+    _radius.set(this, radius);
   }
 
-  [_draw]() {}
-}
-const c = new Circle(1);
+  get radius() {
+    return _radius.get(this);
+  }
 
-const key = Object.getOwnPropertySymbols(c)[0];
-console.log(c[key]);
+  set radius(value) {
+    if (value <= 0) throw new Error('Invalid radius.');
+    _radius.set(this, value);
+  }
+}
+
+const c = new Cirle(1);
