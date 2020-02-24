@@ -9,3 +9,9 @@ Function Declaration are hoisted. Which means they are raised to the top of the 
 In constracts, function expressions are not hoisted.
 
 However, it important to note here that Class Declarations are NOT HOISTED.
+
+# STATIC METHOD
+
+We have both the instance method and static method.
+
+The static method are useful at creating utility functions. Just like we have Math utility functions that are not tied to a particular object.

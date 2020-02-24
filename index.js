@@ -5,10 +5,17 @@ class Circle {
       console.log('Moved');
     };
   }
-
+  // Instance method
   draw() {
     console.log('Draw');
   }
+
+  //Static method
+  static parse(str) {
+    const radius = JSON.parse(str).radius;
+    return new Circle(radius);
+  }
 }
 
-const c = new Circle(1);
+const circle = Circle.parse('{"radius": 1}');
+console.log(circle);
